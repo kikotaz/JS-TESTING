@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+
+body {
+  font-family: -apple-system,
+    BlinkMacSystemFont,Segoe UI,
+    Roboto,Oxygen-Sans,Ubuntu,
+    Cantarell,Helvetica Neue,sans-serif;
+  color:white;
+  background-color: black;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  vertical-align: -webkit-baseline-middle;
+}
+
+h1 {
+  margin: 5px;
+}
+
+h3 {
+  margin: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex
+}
+
+.nav li {
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.home-logo {
+  font-family: 'Shrikhand', cursive;
+  color: blueviolet;
+  font-size: 25;
+  margin-right: 15px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tickers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ticker-item{
+  margin: 10px;
+  text-align: center;
+}
+
+.ticker-symbol{
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: goldenrod;
+}
+
+.ticker-info{
+  margin-bottom: 7px;
+}
+
+.vol {
+  width: 280px;
+}
