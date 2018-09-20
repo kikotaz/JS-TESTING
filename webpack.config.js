@@ -1,8 +1,7 @@
 var path = require('path');
-var HtmlWebpackPlugin = require ('html-webpack-plugin');
-var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var config = {
+module.exports = {
   entry: './app/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -15,26 +14,16 @@ var config = {
       { test: /\.css$/, use: [ 'style-loader', 'css-loader']}
     ]
   },
-  devServer:{
-    historyApiFallback: true
-  },
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+
   plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.html'
     })
   ],
-  mode: "development"
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
-if (process.env.NODE_ENV === 'production'){
-  config.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin()
-  )
-}
-
-module.exports = config;
+console.log("This is " + process.env.NODE_ENV + "mode");
